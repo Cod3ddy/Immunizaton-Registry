@@ -11,6 +11,9 @@ window.onload = () => {
 	defaultNavLinks.classList.add("active");
 };
 
+// global
+const pages = document.querySelector(".pages");
+
 // drop down script
 const dropdown = document.querySelector(".profile-tab");
 dropdown.addEventListener("click", () => {
@@ -76,7 +79,7 @@ overviewTab.addEventListener("click", () => {
 		changePasswordBox.style.display = "none";
 	}
 });
-
+// edit profile tab
 editProfileTab.addEventListener("click", () => {
 	if (editProfileBox.style.display === "none") {
 		editProfileBox.style.display = "flex";
@@ -85,6 +88,7 @@ editProfileTab.addEventListener("click", () => {
 	}
 });
 
+// change password tab
 changePasswordTab.addEventListener("click", () => {
 	if (changePasswordBox.style.display === "none") {
 		changePasswordBox.style.display = "flex";
@@ -94,7 +98,6 @@ changePasswordTab.addEventListener("click", () => {
 });
 
 // pages navigations[side navigation bar]
-
 // get side navigations buttons
 const profileBtn = document.querySelector(
 	".side-navigation .content .nav-links .nav-profile-btn"
@@ -153,4 +156,21 @@ dashboardBtn.addEventListener("click", () => {
 		profilePage.style.display = "none";
 		mapPage.style.display = "none";
 	}
+});
+
+// toggle side navigation bar
+
+const toggleBtn = document.querySelector(".toggle-side-nav-bar");
+const sideNav = document.querySelector(".side-navigation");
+let isSideNavActive = true;
+//show or hide navigation bar on  mouse-btn click
+toggleBtn.addEventListener("click", () => {
+	console.log("side is active : " + isSideNavActive);
+	// sideNav.style.display = sideNav.style.display === "none" ? "block" : "none";
+	sideNav.classList.toggle("show");
+	sideNav.classList.add("inactive");
+
+	pages.classList.toggle("show");
+	pages.classList.add("inactive");
+	// pages.style.marginLeft = isSideNavActive ? "0px" : "250px";
 });

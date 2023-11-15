@@ -1,0 +1,6 @@
+{
+	"minimum-stability": "dev",
+	"require": {
+		"cboden/ratchet": "^0.4.4"
+	}
+}
