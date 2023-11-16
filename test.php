@@ -1,10 +1,27 @@
+<?php
+include "lib/authentication.php";
+
+// encryption and decription key
+
+
+
+
+    if(isset($_GET['error'])){
+        // instantiate encyption class
+        $crypt = new Encyption();
+
+        $message = $_GET['error'];
+        $decrypted = $crypt -> decrypt($message, $crypt -> key);
+        echo"<script> alert( ' ". 'This is a decrypted message'.  $decrypted . "'); </script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Sign Up Page</title>
     <style>
     /* Your CSS styles here */
     body {
@@ -18,7 +35,7 @@
         height: 100vh;
     }
 
-    #login-container {
+    #signup-container {
         background-color: #fff;
         padding: 20px;
         border-radius: 8px;
@@ -31,7 +48,7 @@
         margin-bottom: 20px;
     }
 
-    #login-form {
+    #signup-form {
         text-align: left;
     }
 
@@ -66,11 +83,16 @@
 </head>
 
 <body>
-    <div id="login-container">
+    <div id="signup-container">
         <img src="your-logo.png" alt="Logo" id="logo">
-        <h2>Login to Your Account</h2>
-        <p>Enter your email & password to login</p>
-        <form action="login.php" method="post" onsubmit="return validateForm()">
+        <h2>Create Your Account</h2>
+        <p>Enter your details to sign up</p>
+        <form action="includes/signup.inc.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="uid" placeholder="Enter your username">
+                <div id="username-error" class="error-message"></div>
+            </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email">
@@ -78,19 +100,31 @@
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <input type="password" id="password" name="pwd" placeholder="Enter your password">
                 <div id="password-error" class="error-message"></div>
             </div>
-            <button type="submit">Login</button>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="pwdRepeat" placeholder="Confirm your password">
+                <div id="confirm-password-error" class="error-message"></div>
+            </div>
+            <button type="submit" name="submit">Sign Up</button>
         </form>
     </div>
 
     <script>
     function validateForm() {
+        var usernameInput = document.getElementById('username');
         var emailInput = document.getElementById('email');
         var passwordInput = document.getElementById('password');
+        var confirmPasswordInput = document.getElementById('confirm-password');
+        var usernameError = document.getElementById('username-error');
         var emailError = document.getElementById('email-error');
         var passwordError = document.getElementById('password-error');
+        var confirmPasswordError = document.getElementById('confirm-password-error');
+
+        // Simple username validation (you might want to enhance this)
+        var isUsernameValid = usernameInput.value.trim() !== '';
 
         // Simple email validation (you might want to enhance this)
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -99,12 +133,18 @@
         // Simple password validation (you might want to enhance this)
         var isPasswordValid = passwordInput.value.trim() !== '';
 
+        // Confirm password validation
+        var isConfirmPasswordValid = passwordInput.value === confirmPasswordInput.value;
+
         // Update input styles and error messages based on validation
+        updateInputAndError(usernameInput, isUsernameValid, usernameError, 'Username cannot be empty');
         updateInputAndError(emailInput, isEmailValid, emailError, 'Invalid email address');
         updateInputAndError(passwordInput, isPasswordValid, passwordError, 'Password cannot be empty');
+        updateInputAndError(confirmPasswordInput, isConfirmPasswordValid, confirmPasswordError,
+            'Passwords do not match');
 
-        // Check if both email and password are valid before allowing form submission
-        return isEmailValid && isPasswordValid;
+        // Check if all fields are valid before allowing form submission
+        return isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
     }
 
     function updateInputAndError(inputElement, isValid, errorElement, errorMessage) {
