@@ -159,7 +159,6 @@ dashboardBtn.addEventListener("click", () => {
 });
 
 // toggle side navigation bar
-
 const toggleBtn = document.querySelector(".toggle-side-nav-bar");
 const sideNav = document.querySelector(".side-navigation");
 let isSideNavActive = true;

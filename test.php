@@ -2,10 +2,6 @@
 include "lib/authentication.php";
 
 // encryption and decription key
-
-
-
-
     if(isset($_GET['response'])){
         // instantiate encyption class
         $crypt = new Encyption();
@@ -14,6 +10,8 @@ include "lib/authentication.php";
         echo"<script> alert( ' ". 'This is a decrypted message\n'.  $decrypted . "'); </script>";
     }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
