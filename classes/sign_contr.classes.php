@@ -15,33 +15,39 @@ class SignUpContr extends SignUp{
         $this -> email = $email;
     }
 
-    // add user if there's no error
-
+    // handle errors
     public function signUpUser(){
+        // instantiate encryption class
+        $crypt = new Encyption();
+        $errorMessage = "";
+
         if($this -> invalidEmail() == false){
             // echo 'Invalid Email'
-            header("location: ../test.php?error=invalidemail");
+            $errorMessage =  $crypt -> encrypt("invalidemail", $crypt -> key);
+            header("location: ../test.php?response=$errorMessage");
             exit();
         }
 
         if($this  -> InvalidUid() == false){
             // echo 'Invalid username'
-            header("location: ../test.php?error=invalidusername");
+            $errorMessage =  $crypt -> encrypt("invalidusername", $crypt -> key);
+            header("location: ../test.php?response=$errorMessage");
             exit();
         }
 
         if($this  -> userExist() == false){
             // echo 'user already exist'
-            header("location: ../test.php?error=useralreadyexist");
+            $errorMessage =  $crypt -> encrypt("useralreadyexist", $crypt -> key);
+            header("location: ../test.php?response=$errorMessage");
             exit();
         }
 
         if($this -> pwdMatch() == false){
             // echo passwords do not match
-            header("location: ../test.php?error=passwords do not match");
+            $errorMessage =  $crypt -> encrypt("passwordsdonotmatch", $crypt -> key);
+            header("location: ../test.php?response=$errorMessage");
             exit();
         }
-        echo"<script> alert( ' ". $this -> uid . "'); </script>";
         // if not error was found
         $this -> setUser($this -> uid, $this -> pwd, $this -> email);
     }

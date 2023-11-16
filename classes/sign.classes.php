@@ -10,7 +10,7 @@ class SignUp extends Dbh{
         $stmt = $this -> connect() -> prepare($query);
 
         $hashedpwd  = password_hash($pwd, PASSWORD_DEFAULT);
-        echo"<script> alert( ' ". $uid . "'); </script>";
+        
         // check if stmt failed to execute
         if(!$stmt -> execute(array($uid, $hashedpwd, $email))){
             $stmt = null;

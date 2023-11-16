@@ -6,13 +6,12 @@ include "lib/authentication.php";
 
 
 
-    if(isset($_GET['error'])){
+    if(isset($_GET['response'])){
         // instantiate encyption class
         $crypt = new Encyption();
-
-        $message = $_GET['error'];
+        $message = $_GET['response'];
         $decrypted = $crypt -> decrypt($message, $crypt -> key);
-        echo"<script> alert( ' ". 'This is a decrypted message'.  $decrypted . "'); </script>";
+        echo"<script> alert( ' ". 'This is a decrypted message\n'.  $decrypted . "'); </script>";
     }
 ?>
 <!DOCTYPE html>
