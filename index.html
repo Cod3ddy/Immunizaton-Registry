@@ -3,157 +3,69 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dashboard</title>
-		<!-- font awesome icons -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
+		<title>Login in your account!</title>
+		<!-- css link -->
+		<link rel="stylesheet" href="assets/css/login.css" />
 
-		<!-- iconsout icons -->
-		<link
-			rel="stylesheet"
-			href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-		/>
-
-		<!-- booststrap icons -->
+		<!-- bootstrap icons -->
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
 		/>
-
-		<!-- styling -->
-		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
-		<!-- top navigation bar -->
-		<div class="top-navigation-bar">
-			<div class="top-nav-title">
-				<div class="top-nav-logo">
-					<img src="assets/imgs/logo.png" alt="logo" />
-					<h3>IRIS</h3>
-				</div>
-				<div class="toggle-side-nav-bar">
-					<i class="bi bi-list"></i>
-				</div>
+		<!-- login form container -->
+		<div class="login-container">
+			<!-- logo -->
+			<div class="login-form-logo">
+				<img src="assets/imgs/immunization.png" alt="lost in universe" />
+				<p>IRIS</p>
 			</div>
-			<!-- left side top nav -->
-			<form class="top-nav-left" action="#" method="get">
-				<input type="text" placeholder="Search" name="search" />
-				<button type="submit"><i class="fa fa-search"></i></button>
-			</form>
 
-			<!-- right side top nav-->
-			<div class="top-nav-right">
-				<i class="bi bi-bell"></i>
-				<i class="bi bi-chat-left-text"></i>
-				<div class="profile-tab">
-					<img src="assets/imgs/cat.jpg" alt="" />
-					<p>E.Chirwa <i class="bi bi-caret-down-fill"></i></p>
-					<div id="dropdown-menu" class="dropdown-menu">
-						<div class="full-name">Edward Chirwa</div>
-						<div class="dropdown-links">
-							<div class="dropdown-link-item">
-								<a href="#"><i class="bi bi-person"></i>My Profile</a>
-							</div>
-							<div class="dropdown-link-item">
-								<a href="#"><i class="bi bi-question-circle"></i>Need Help?</a>
-							</div>
-							<div class="dropdown-link-item">
-								<a href="#"><i class="bi bi-box-arrow-right"></i>Sign Out</a>
-							</div>
-						</div>
-					</div>
+			<div class="login-form">
+				<!-- login form title -->
+				<div class="login-form-title">
+					<h2>Login to Your Account</h2>
+					<p>Enter your email & password to login</p>
 				</div>
+
+				<!-- perform action[on submit] -->
+				<form action="" onsubmit="return validateForm()">
+					<!-- email text field -->
+					<div class="login-form-item">
+						<label for="email">Email</label>
+						<div class="email-input">
+							<i class="bi bi-at"></i>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder="Enter your email"
+							/>
+						</div>
+
+						<div id="email-error" class="error-message"></div>
+					</div>
+
+					<!-- password text field -->
+					<div class="login-form-item">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Enter your password"
+						/>
+						<div id="password-error" class="error-message"></div>
+					</div>
+
+					<!-- submit button -->
+					<button type="submit">Login</button>
+				</form>
 			</div>
 		</div>
 
-		<!-- side navigation bar -->
-		<div class="side-navigation">
-			<!-- side navigation bar content -->
-			<div class="content">
-				<ul class="nav-links">
-					<li class="nav-dashboard"><i class="bi bi-grid"></i>Dashboard</li>
-					<li class="nav-map-btn"><i class="bi bi-map"></i>Map</li>
-					<li class="nav-history-btn">
-						<i class="bi bi-calendar-check"></i>History
-					</li>
-					<li class="nav-profile-btn"><i class="bi bi-person"></i>Profile</li>
-				</ul>
-
-				<div class="nav-footer">
-					<div class="nav-footer-item">
-						<div class="fa-solid fa-info"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- pages [navigation]-->
-		<div class="pages">
-			<!-- dashboard page -->
-			<div class="dashboard-page" style="display: block">
-				<div class="page-title">
-					<h1>Dashboard</h1>
-				</div>
-			</div>
-
-			<!-- map page -->
-			<div class="map-page" style="display: none">
-				<div class="page-title">
-					<h1>Map</h1>
-				</div>
-			</div>
-
-			<!-- history page -->
-			<div class="history-page" style="display: none">
-				<div class="page-title">
-					<h1>History</h1>
-				</div>
-			</div>
-
-			<!-- profile page -->
-			<div class="profile-page" style="display: none">
-				<div class="page-title">
-					<h1>Profile</h1>
-				</div>
-				<section class="profile-section">
-					<div class="profile-image">
-						<img src="assets/imgs/cat.jpg" alt="" />
-						<a href="">Edit <i class="bi bi-pencil"></i></a>
-					</div>
-					<div class="profile-content">
-						<div class="nav-tab">
-							<ul>
-								<li class="overview">Overview</li>
-								<li class="edit-profile">Edit Profile</li>
-								<li class="change-password">Change Password</li>
-							</ul>
-						</div>
-						<div class="underline"></div>
-						<div class="content-box">
-							<div class="overview-box" style="display: flex">
-								<p>overview tab</p>
-							</div>
-							<div class="edit-profile-box" style="display: none">
-								<p>edit profile tab</p>
-							</div>
-
-							<div class="change-password-box" style="display: none">
-								<p>change password tab</p>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-
-		<!-- js scripts -->
-		<script src="assets/js/main.js"></script>
+		<!-- validation js file -->
+		<script src="login_validation.js"></script>
 	</body>
 </html>
-
-<!-- lets do this again tomorrow -->

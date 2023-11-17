@@ -2,7 +2,7 @@
 <div class="top-navigation-bar">
     <div class="top-nav-title">
         <div class="top-nav-logo">
-            <img src="../../assets/imgs/logo.png" alt="logo" />
+            <img src="../assets/imgs/logo.png" alt="logo" />
             <h3>IRIS</h3>
         </div>
         <div class="toggle-side-nav-bar">
@@ -20,7 +20,7 @@
         <i class="bi bi-bell"></i>
         <i class="bi bi-chat-left-text"></i>
         <div class="profile-tab">
-            <img src="../../assets/imgs/cat.jpg" alt="" />
+            <img src="../assets/imgs/cat.jpg" alt="" />
             <p>E.Chirwa <i class="bi bi-caret-down-fill"></i></p>
             <div id="dropdown-menu" class="dropdown-menu">
                 <div class="full-name">Edward Chirwa</div>

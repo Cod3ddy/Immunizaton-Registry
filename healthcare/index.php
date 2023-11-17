@@ -1,9 +1,9 @@
 <!-- healthcare dashboard -->
 <!-- header -->
-<?php include"../../includes/header.php"?>
+<?php include"../includes/header.php"?>
 
 <!-- top navigation bar -->
-<?php include"../../includes/topnav.php"?>
+<?php include"../includes/topnav.php"?>
 
 <!-- side nav -->
 <?php include"includes/sidenav.php"?>
@@ -111,4 +111,4 @@
 </div>
 
 <!-- footer -->
-<?php include"../../includes/footer.php"?>
+<?php include"../includes/footer.php"?>
