@@ -97,27 +97,29 @@ changePasswordTab.addEventListener("click", () => {
 	}
 });
 
-// pages navigations[side navigation bar]
+// pages navigations[side navigation bar[PATIENT]]
 // get side navigations buttons
-const profileBtn = document.querySelector(
-	".side-navigation .content .nav-links .nav-profile-btn"
+const patientProfileBtn = document.querySelector(
+	".side-navigation .content .nav-links .patient-nav-profile-btn"
 );
-const dashboardBtn = document.querySelector(".nav-links .nav-dashboard");
-const mapBtn = document.querySelector(
-	".side-navigation .content .nav-links .nav-map-btn"
+const patientDashboardBtn = document.querySelector(
+	".nav-links .patient-nav-dashboard"
 );
-const historyBtn = document.querySelector(
-	".side-navigation .content .nav-links .nav-history-btn"
+const patientMapBtn = document.querySelector(
+	".side-navigation .content .nav-links .patient-nav-map-btn"
+);
+const patientHistoryBtn = document.querySelector(
+	".side-navigation .content .nav-links .patient-nav-history-btn"
 );
 
 // get pages
-const profilePage = document.querySelector(".profile-page");
-const historyPage = document.querySelector(".history-page");
-const mapPage = document.querySelector(".map-page");
-const dashboardPage = document.querySelector(".dashboard-page");
+const patientProfilePage = document.querySelector(".patient-profile-page");
+const patientHistoryPage = document.querySelector(".patient-history-page");
+const patientMapPage = document.querySelector(".patient-map-page");
+const patientDashboardPage = document.querySelector(".patient-dashboard-page");
 
 // profile page
-profileBtn.addEventListener("click", () => {
+patientProfileBtn.addEventListener("click", () => {
 	if (profilePage.style.display == "none") {
 		profilePage.style.display = "block";
 		mapPage.style.display = "none";
@@ -127,7 +129,7 @@ profileBtn.addEventListener("click", () => {
 });
 
 // history page
-historyBtn.addEventListener("click", () => {
+patientHistoryBtn.addEventListener("click", () => {
 	console.log("history button clicked!");
 	if (historyPage.style.display == "none") {
 		historyPage.style.display = "block";
@@ -139,7 +141,7 @@ historyBtn.addEventListener("click", () => {
 
 // map page
 
-mapBtn.addEventListener("click", () => {
+patientMapBtn.addEventListener("click", () => {
 	if (mapPage.style.display == "none") {
 		mapPage.style.display = "block";
 		historyPage.style.display = "none";
@@ -149,7 +151,7 @@ mapBtn.addEventListener("click", () => {
 });
 
 // dashboard - page
-dashboardBtn.addEventListener("click", () => {
+patientDashboardBtn.addEventListener("click", () => {
 	if (dashboardPage.style.display == "none") {
 		dashboardPage.style.display = "block";
 		historyPage.style.display = "none";

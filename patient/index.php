@@ -12,28 +12,28 @@
 <div class="pages">
 
     <!-- dashboard page -->
-    <div class="dashboard-page" style="display: block">
+    <div class="patient-dashboard-page" style="display: block">
         <div class="page-title">
             <h1>Dashboard</h1>
         </div>
     </div>
 
     <!-- map page -->
-    <div class="map-page" style="display: none">
+    <div class="patient-map-page" style="display: none">
         <div class="page-title">
             <h1>Map</h1>
         </div>
     </div>
 
     <!-- history page -->
-    <div class="history-page" style="display: none">
+    <div class="patient-history-page" style="display: none">
         <div class="page-title">
             <h1>History</h1>
         </div>
     </div>
 
     <!-- profile page -->
-    <div class="profile-page" style="display: none">
+    <div class="patient-profile-page" style="display: none">
         <div class="page-title">
             <h1>Profile</h1>
         </div>

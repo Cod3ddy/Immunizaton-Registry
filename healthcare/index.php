@@ -1,6 +1,10 @@
 <!-- healthcare dashboard -->
+<!-- start sessio -->
+<?php
+    session_start();
+?>
 <!-- header -->
-<?php include"../includes/header.php"?>
+<?php include"includes/header.php"?>
 
 <!-- top navigation bar -->
 <?php include"../includes/topnav.php"?>
@@ -12,19 +16,83 @@
 <div class="pages">
 
     <!-- dashboard page -->
-    <div class="dashboard-page" style="display: block">
+    <div class="h-dash-page" style="display: block">
         <div class="page-title">
             <h1>Dashboard</h1>
         </div>
     </div>
 
-    <!-- map page -->
-    <div class="add-patient-page" style="display: none">
+    <!-- patient page -->
+    <div class="h-patient-page" style="display: none">
         <div class="page-title">
-            <h1>patients</h1>
+            <h1>Patients</h1>
         </div>
         <section class="patient-section">
             <!-- patient registration form -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Register patient</h5>
+                    <!-- User Registration Form -->
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputGender" class="form-label">Gender</label>
+                            <select id="inputGender" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLastName" class="form-label">Last Name</label>
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Physical Address</label>
+                            <input type="text" class="form-control" id="inputAddress"
+                                placeholder="Hiltop Mzuzu, M1 Streat">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="inputPhoneNumber">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="inputConfirmPassword">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputHomeDistrict" class="form-label">Home District</label>
+                            <input type="text" class="form-control" id="inputHomeDistrict">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputDateOfBirth" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="inputDateOfBirth">
+                        </div>
+                        <div class="h-form-btn">
+                            <button type="submit" class="btn btn-primary submit">Register</button>
+                            <button type="reset" class="btn btn-secondary reset">Clear</button>
+                        </div>
+                    </form><!-- End User Registration Form -->
+                </div>
+            </div>
+
+
+            <!--
             <div class="patient-registry-form">
                 <h2>Patient Registration Form</h2>
 
@@ -59,7 +127,7 @@
                     </div>
                     <button type="submit">Register</button>
                 </form>
-            </div>
+            </div> -->
 
             <!-- search patient -->
             <div class="view-patient-information">
@@ -68,7 +136,7 @@
     </div>
 
     <!-- history page -->
-    <div class="history-page" style="display: none">
+    <div class="h-hist-page" style="display: none">
         <div class="page-title">
             <h1>History</h1>
         </div>
@@ -111,4 +179,4 @@
 </div>
 
 <!-- footer -->
-<?php include"../includes/footer.php"?>
+<?php include"includes/footer.php"?>

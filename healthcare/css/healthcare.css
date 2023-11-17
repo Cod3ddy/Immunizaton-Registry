@@ -24,6 +24,8 @@ p {
 	--link-selected-color: #f6f9ff;
 	--link-active-text-color: #4e60f2;
 	--text-color-greyshade: #787777;
+	--form-text-color: #677fa9;
+	--form-text-color-hover: #718dbe;
 }
 
 body {
@@ -424,6 +426,91 @@ body {
 	display: none;
 	background-color: blue;
 	height: 100px;
+}
+
+/* healthcare page */
+
+/* PAGE [] */
+
+.pages .h-patient-page .patient-section {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column-gap: 20px;
+}
+
+.pages .h-patient-page .patient-section .card {
+	border: none;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 100%;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 20px 0px rgba(0, 74, 148, 0.1);
+}
+
+/* form buttons */
+.pages .h-patient-page .patient-section .card .card-body .card-title {
+	color: var(--form-text-color);
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.pages .h-patient-page .patient-section .card .card-body .h-form-btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-right: 20px;
+	margin-top: 20px;
+	width: 25%;
+}
+.pages .h-patient-page .patient-section .card .card-body .h-form-btn i {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 18px;
+}
+.pages .h-patient-page .patient-section .card .card-body .h-form-btn i:hover {
+	color: rgba(255, 255, 255, 1);
+}
+.pages .h-patient-page .patient-section .card .card-body .h-form-btn .reset {
+	background-color: rgb(236, 70, 70);
+	border: none;
+	padding: 10px;
+}
+.pages
+	.h-patient-page
+	.patient-section
+	.card
+	.card-body
+	.h-form-btn
+	.reset:hover {
+	background-color: rgb(255, 75, 75);
+}
+.pages .h-patient-page .patient-section .card .card-body .h-form-btn .submit {
+	background-color: var(--form-text-color);
+	border: none;
+	padding: 10px;
+}
+
+.pages
+	.h-patient-page
+	.patient-section
+	.card
+	.card-body
+	.h-form-btn
+	.submit:hover {
+	background-color: var(--form-text-color-hover);
+}
+
+/* form text */
+.pages .h-patient-page .patient-section .card .card-body label {
+	color: var(--form-text-color);
+}
+
+/* view information section */
+.pages .h-patient-page .patient-section .view-patient-information {
+	background-color: blue;
+	width: 100%;
+	height: 20%;
 }
 
 @media screen and (max-width: 775px) {
