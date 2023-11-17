@@ -159,17 +159,30 @@ dashboardBtn.addEventListener("click", () => {
 });
 
 // toggle side navigation bar
-const toggleBtn = document.querySelector(".toggle-side-nav-bar");
+const toggleBtn = document.querySelectorAll(".toggle-side-nav-bar");
 const sideNav = document.querySelector(".side-navigation");
 let isSideNavActive = true;
 //show or hide navigation bar on  mouse-btn click
-toggleBtn.addEventListener("click", () => {
-	console.log("side is active : " + isSideNavActive);
-	// sideNav.style.display = sideNav.style.display === "none" ? "block" : "none";
-	sideNav.classList.toggle("show");
-	sideNav.classList.add("inactive");
+// toggleBtn.addEventListener("click", () => {
+// 	console.log("side is active : " + isSideNavActive);
+// 	// sideNav.style.display = sideNav.style.display === "none" ? "block" : "none";
+// 	sideNav.classList.toggle("show");
+// 	sideNav.classList.add("inactive");
 
-	pages.classList.toggle("show");
-	pages.classList.add("inactive");
-	// pages.style.marginLeft = isSideNavActive ? "0px" : "250px";
+// 	pages.classList.toggle("show");
+// 	pages.classList.add("inactive");
+// 	// pages.style.marginLeft = isSideNavActive ? "0px" : "250px";
+// });
+
+toggleBtn.forEach((button) => {
+	button.addEventListener("click", () => {
+		console.log("side is active : " + isSideNavActive);
+		// sideNav.style.display = sideNav.style.display === "none" ? "block" : "none";
+		sideNav.classList.toggle("show");
+		sideNav.classList.add("inactive");
+
+		pages.classList.toggle("show");
+		pages.classList.add("inactive");
+		// pages.style.marginLeft = isSideNavActive ? "0px" : "250px";
+	});
 });

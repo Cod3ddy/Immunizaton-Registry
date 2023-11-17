@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300&display=swap");
+
+/* simple c-p */
+:root {
+	--primary-text-color: #012970;
+	--button-color: #0d6efd;
+	--light-greyshade-color: #4e4c4c;
+}
+.add-patient-page .patient-section {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column-gap: 20px;
+}
+
+.add-patient-page .patient-section .patient-registry-form {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 100%;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 20px 0px rgba(0, 74, 148, 0.1);
+}
+
+.add-patient-page .patient-section .patient-registry-form h2 {
+	color: var(--primary-text-color);
+}
+
+.add-patient-page .patient-section .patient-registry-form .patient-form-item {
+	display: flex;
+	flex-direction: column;
+	padding: 15px 0;
+}
+
+.add-patient-page
+	.patient-section
+	.patient-registry-form
+	.patient-form-item
+	input {
+	width: 100%;
+	height: 43px;
+	border: 1px solid #eaeaea;
+	border-radius: 3px;
+	padding: 0 10px;
+	font-size: 16px;
+}
+/* view information section */
+.add-patient-page .patient-section .view-patient-information {
+	background-color: blue;
+	width: 100%;
+	height: 20%;
+}

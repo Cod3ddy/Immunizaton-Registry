@@ -4,7 +4,7 @@
     <div class="content">
         <ul class="nav-links">
             <li class="nav-dashboard"><i class="bi bi-grid"></i>Dashboard</li>
-            <li class="nav-healthcare-btn"><i class="bi bi-map"></i>healthcare</li>
+            <li class="nav-patient-btn"><i class="bi bi-map"></i>Patients</li>
             <li class="nav-healthcare-btn">
                 <i class="bi bi-calendar-check"></i>healthcare
             </li>
