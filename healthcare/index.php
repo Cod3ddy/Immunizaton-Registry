@@ -14,7 +14,6 @@
 
 <!-- pages [navigation]-->
 <div class="pages">
-
     <!-- dashboard page -->
     <div class="h-dash-page" style="display: block">
         <div class="page-title">

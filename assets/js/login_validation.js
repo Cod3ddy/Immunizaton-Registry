@@ -25,14 +25,15 @@ function validateForm() {
 		passwordTextFieldError,
 		"Password cannot be empty"
 	);
-	validateInput(
-		passwordTextField,
-		isPasswordCorrectFormat,
-		passwordTextFieldError,
-		"Password must be at least 8 characters long, contain atleast 1 character and 1 digit"
-	);
+	// validateInput(
+	// 	passwordTextField,
+	// 	isPasswordCorrectFormat,
+	// 	passwordTextFieldError,
+	// 	"Password must be at least 8 characters long, contain atleast 1 character and 1 digit"
+	// );
+	// && isPasswordCorrectFormat
 
-	return isEmailValid && isPasswordValid && isPasswordCorrectFormat;
+	return isEmailValid && isPasswordValid;
 }
 
 // validate user input

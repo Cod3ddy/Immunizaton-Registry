@@ -1,7 +1,5 @@
 <?php
 // instantiate AUTH class
-include "../includes/lib/authentication.php";
-
 
 class Login extends Database{
      
@@ -16,7 +14,7 @@ class Login extends Database{
 
         // checking if user is patient or not [PATIENT AUTH]
         // [query]
-        $patQuery = "SELECT patientID, patient_password FROM $patientTB WHERE patientEmail = ?;";
+        $patQuery = "SELECT patientID, patient_password FROM $patientTB WHERE patient_email = ?;";
         $patStmt = $this -> connect()->prepare($patQuery);
         
         // check if stmt failed to execute
@@ -43,7 +41,7 @@ class Login extends Database{
             header("location: ../index.php?response=$response");
             exit();
         }else if (trim($decryptedPassword) === trim($password)){
-            $patQuery = "SELECT patientID, patient_password FROM $patientTB WHERE patientEmail = ?;";
+            $patQuery = "SELECT patientID, patient_password FROM $patientTB WHERE patient_email = ?;";
             $patStmt = $this -> connect()->prepare($patQuery);
 
             // execute the query
@@ -173,6 +171,9 @@ class Login extends Database{
                 $this->processLogin($user[0]["hc_providerID"], "admin");
             } 
         }
+
+        header("Location: ../index.php?response=failedtologin");
+        exit();
     }
 // processing login detials[GET USER TYPE]
     private function processLogin($userID, $userType){
@@ -187,18 +188,18 @@ class Login extends Database{
 
         switch ($userType) {
             case 'patient':
-                header("Location: patient/index.php");
+                header("Location: ../patient/index.php");
                 exit();
             case 'admin':
-                header("Location: admin/index.php");
+                header("Location: ../admin/index.php");
                 exit();
                 
             case 'provider':
-                header("Location: healthcare/index.php");
+                header("Location: ../healthcare/index.php");
                 exit();
 
             default:
-               header("Location: index.php?response=$response");
+               header("Location: ../index.php?response=$response");
         }
     }
 }

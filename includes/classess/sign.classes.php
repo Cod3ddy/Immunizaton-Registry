@@ -17,7 +17,7 @@ class SignUp extends Dbh{
             header("location: ../test.php?error=stmtfailed");
             exit();
         }
-        
+         
         $stmt = null;
     }
     
