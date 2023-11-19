@@ -132,3 +132,19 @@ changePasswordTab.addEventListener("click", () => {
 		editProfileBox.style.display = "none";
 	}
 });
+
+function previewFile() {
+	const fileInput = document.getElementById("fileInput");
+	const imagePreview = document.getElementById("imagePreview");
+	const hiddenFileInput = document.getElementById("hiddenFileInput");
+
+	// Update the hidden input value with the selected file name
+	hiddenFileInput.value = fileInput.files[0].name;
+
+	// Display the selected image preview
+	const reader = new FileReader();
+	reader.onload = function (e) {
+		imagePreview.src = e.target.result;
+	};
+	reader.readAsDataURL(fileInput.files[0]);
+}

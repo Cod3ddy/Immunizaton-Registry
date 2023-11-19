@@ -21,9 +21,34 @@
         <i class="bi bi-chat-left-text"></i>
         <div class="profile-tab">
             <img src="../assets/imgs/cat.jpg" alt="" />
-            <p>E.Chirwa <i class="bi bi-caret-down-fill"></i></p>
+            <p> <?php 
+            if(isset($_SESSION['userType'])){
+                $userType = $_SESSION["userType"];
+                     if($userType === "provider"){
+                        echo $userType;
+                    }else if ($userType === "admin"){
+                        echo $userType;
+                    }else if ($userType === "patient"){
+                        echo $userType;
+                    }       
+            }
+            ?><i class="bi bi-caret-down-fill"></i></p>
             <div id="dropdown-menu" class="dropdown-menu">
-                <div class="full-name">Edward Chirwa</div>
+                <!-- start session -->
+                <div class="full-name">
+                    <?php
+                        if(isset($_SESSION['userType'])){
+                            $userType = $_SESSION["userType"];
+                            if($userType === "provider"){
+                                echo $userType;
+                            }else if ($userType === "admin"){
+                                echo $userType;
+                            }else if ($userType === "patient"){
+                                echo $userType;
+                            }
+                        }
+                    ?>
+                </div>
                 <div class="dropdown-links">
                     <div class="dropdown-link-item">
                         <a href="#"><i class="bi bi-person"></i>My Profile</a>

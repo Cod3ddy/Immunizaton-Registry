@@ -2,7 +2,7 @@
 
 class Database{
     // connect to the database
-    protected function connect(){
+    public function connect(){
         // try connecting to the db or show error(ex)
         try{
             $username = "root";

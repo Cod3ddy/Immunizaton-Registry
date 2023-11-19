@@ -31,6 +31,7 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
+
 /* top navigation bar */
 .top-navigation-bar {
 	position: fixed;
@@ -335,6 +336,7 @@ body {
 	height: 120px;
 	width: 120px;
 	border-radius: 50%;
+	z-index: 99;
 }
 
 .pages .profile-section .profile-image {
@@ -400,7 +402,7 @@ body {
 
 .pages .profile-section .profile-content .underline {
 	position: relative;
-	top: -2px;
+	top: 0px;
 	border-bottom: 2px solid #ccc;
 	z-index: 1;
 }
@@ -411,9 +413,20 @@ body {
 }
 
 .pages .profile-section .profile-content .content-box .overview-box {
-	display: flex;
-	background-color: red;
+	border: 2px solid #ccc;
+	border-radius: 10px;
 	height: 100px;
+}
+
+/* overview */
+.pages
+	.profile-section
+	.profile-content
+	.content-box
+	.overview-box
+	.overview-items {
+	display: flex;
+	flex-direction: column;
 }
 .pages .profile-section .profile-content .content-box .edit-profile-box {
 	display: none;

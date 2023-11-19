@@ -1,4 +1,6 @@
 <!-- admin dashboard -->
+<!-- start session -->
+<?php session_start();?>
 <!-- header -->
 <?php include"../includes/header.php"?>
 
@@ -64,6 +66,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
     </div>
 </div>

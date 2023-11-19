@@ -97,69 +97,6 @@ changePasswordTab.addEventListener("click", () => {
 	}
 });
 
-// pages navigations[side navigation bar[PATIENT]]
-// get side navigations buttons
-const patientProfileBtn = document.querySelector(
-	".side-navigation .content .nav-links .patient-nav-profile-btn"
-);
-const patientDashboardBtn = document.querySelector(
-	".nav-links .patient-nav-dashboard"
-);
-const patientMapBtn = document.querySelector(
-	".side-navigation .content .nav-links .patient-nav-map-btn"
-);
-const patientHistoryBtn = document.querySelector(
-	".side-navigation .content .nav-links .patient-nav-history-btn"
-);
-
-// get pages
-const patientProfilePage = document.querySelector(".patient-profile-page");
-const patientHistoryPage = document.querySelector(".patient-history-page");
-const patientMapPage = document.querySelector(".patient-map-page");
-const patientDashboardPage = document.querySelector(".patient-dashboard-page");
-
-// profile page
-patientProfileBtn.addEventListener("click", () => {
-	if (profilePage.style.display == "none") {
-		profilePage.style.display = "block";
-		mapPage.style.display = "none";
-		dashboardPage.style.display = "none";
-		historyPage.style.display = "none";
-	}
-});
-
-// history page
-patientHistoryBtn.addEventListener("click", () => {
-	console.log("history button clicked!");
-	if (historyPage.style.display == "none") {
-		historyPage.style.display = "block";
-		profilePage.style.display = "none";
-		mapPage.style.display = "none";
-		dashboardPage.style.display = "none";
-	}
-});
-
-// map page
-
-patientMapBtn.addEventListener("click", () => {
-	if (mapPage.style.display == "none") {
-		mapPage.style.display = "block";
-		historyPage.style.display = "none";
-		profilePage.style.display = "none";
-		dashboardPage.style.display = "none";
-	}
-});
-
-// dashboard - page
-patientDashboardBtn.addEventListener("click", () => {
-	if (dashboardPage.style.display == "none") {
-		dashboardPage.style.display = "block";
-		historyPage.style.display = "none";
-		profilePage.style.display = "none";
-		mapPage.style.display = "none";
-	}
-});
-
 // toggle side navigation bar
 const toggleBtn = document.querySelectorAll(".toggle-side-nav-bar");
 const sideNav = document.querySelector(".side-navigation");
